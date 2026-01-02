@@ -63,4 +63,137 @@
         /* Başlık Alanı */
         header { text-align: center; padding: 70px 10% 30px; }
         header h1 { 
-            font-family
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem; 
+            font-weight: 900; 
+            color: white;
+            text-shadow: 0 0 20px #ff0000;
+        }
+        header span { color: #ff0000; }
+
+        /* Kartlar */
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .section-header { 
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem; 
+            margin: 50px 0 25px; 
+            color: #fff; 
+            border-left: 8px solid #ff0000;
+            padding-left: 20px;
+            text-transform: uppercase;
+        }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .card { 
+            background: linear-gradient(145deg, #151515, #0a0a0a);
+            border: 1px solid #222;
+            border-radius: 10px; 
+            padding: 40px 20px; 
+            text-align: center;
+            transition: 0.4s ease;
+            position: relative;
+        }
+        .card::after { 
+            content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; 
+            background: #ff0000; transition: 0.4s; 
+        }
+        .card:hover { transform: scale(1.05); border-color: #ff0000; box-shadow: 0 10px 40px rgba(255, 0, 0, 0.15); }
+        .card:hover::after { width: 100%; }
+
+        .card h3 { font-size: 1.8rem; margin-bottom: 10px; letter-spacing: 2px; }
+        .card .price { font-size: 1.5rem; color: #ff0000; font-weight: 900; margin-bottom: 30px; display: block; }
+        
+        .card-btn { 
+            background: transparent; 
+            color: white; 
+            border: 2px solid #ff0000; 
+            padding: 12px; 
+            border-radius: 4px; 
+            font-weight: 900; 
+            cursor: pointer; 
+            width: 100%; 
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .card-btn:hover { background: #ff0000; box-shadow: 0 0 20px #ff0000; }
+
+        /* Arka Plan Dev Yazı */
+        .bg-text-footer { 
+            text-align: center; font-size: 10vw; font-weight: 900; 
+            color: rgba(255, 0, 0, 0.03); 
+            text-transform: uppercase; pointer-events: none; margin: 60px 0;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .page { display: none; }
+        .page.active { display: block; animation: slideIn 0.4s ease-out; }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-links">
+            <button class="nav-btn active" onclick="showPage('mc')">MINECRAFT</button>
+            <button class="nav-btn" onclick="showPage('valo')">VALORANT</button>
+            <button class="nav-btn" onclick="showPage('robux')">ROBLOX</button>
+        </div>
+        <div class="auth-buttons">
+            <button class="register-btn">HESAP AÇ</button>
+        </div>
+    </nav>
+
+    <header>
+        <h1>TTNİ <span>NETWORK</span></h1>
+        <p style="color: #666; font-size: 1.1rem; letter-spacing: 3px;">OYUNUN KRALLARI BURADA</p>
+    </header>
+
+    <div class="container">
+        <div id="mc" class="page active">
+            <div class="section-header">RANK MARKET</div>
+            <div class="grid">
+                <div class="card"><h3>VIP</h3><span class="price">25 TL</span><button class="card-btn">SATIN AL</button></div>
+                <div class="card"><h3>MVIP</h3><span class="price">50 TL</span><button class="card-btn">SATIN AL</button></div>
+                <div class="card" style="border-left: 4px solid #fff;"><h3>HELPER</h3><span class="price" style="color:#fff;">45 TL</span><button class="card-btn" style="border-color:#fff;">BAŞVURU YAP</button></div>
+            </div>
+
+            <div class="section-header">EKONOMİ PAKETLERİ</div>
+            <div class="grid">
+                <div class="card"><h3>50M MONEY</h3><span class="price">40 TL</span><button class="card-btn">SATIN AL</button></div>
+                <div class="card"><h3>100M MONEY</h3><span class="price">60 TL</span><button class="card-btn">SATIN AL</button></div>
+                <div class="card"><h3>1B MONEY</h3><span class="price">150 TL</span><button class="card-btn">SATIN AL</button></div>
+            </div>
+        </div>
+
+        <div id="valo" class="page">
+            <div class="section-header">VALORANT VP</div>
+            <div class="grid">
+                <div class="card"><h3>500 VP</h3><span class="price">200 TL</span><button class="card-btn">SATIN AL</button></div>
+                <div class="card"><h3>1000 VP</h3><span class="price">500 TL</span><button class="card-btn">SATIN AL</button></div>
+                <div class="card"><h3>11000 VP</h3><span class="price">3000 TL</span><button class="card-btn">SATIN AL</button></div>
+            </div>
+        </div>
+
+        <div id="robux" class="page">
+            <div class="section-header">ROBUX MARKET</div>
+            <div class="grid">
+                <div class="card"><h3>100 ROBUX</h3><span class="price">50 TL</span><button class="card-btn">SATIN AL</button></div>
+                <div class="card"><h3>500 ROBUX</h3><span class="price">250 TL</span><button class="card-btn">SATIN AL</button></div>
+                <div class="card"><h3>1000 ROBUX</h3><span class="price">500 TL</span><button class="card-btn">SATIN AL</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-text-footer">TTNI NETWORK</div>
+
+    <script>
+        function showPage(id) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
