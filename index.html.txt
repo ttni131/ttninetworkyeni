@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ttni Network | Market & Üyelik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* TEMEL STİLLER VE ARKA PLAN */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        
+        body { 
+            background: url('https://wallpaperaccess.com/full/1154336.jpg') no-repeat center center fixed; 
+            background-size: cover;
+            color: white; 
+            overflow-x: hidden; 
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Overlay (Görseldeki gibi içeriği okunaklı yapmak için karartma) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        /* ARKA PLAN KIRMIZI YAZI */
+        .bg-text { 
+            position: fixed; 
+            bottom: 10%; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            font-size: 6vw; 
+            font-weight: 900; 
+            color: rgba(255, 0, 0, 0.4); 
+            z-index: 0; 
+            white-space: nowrap; 
+            pointer-events: none; 
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        /* NAVBAR */
+        nav { 
+            background: white; 
+            padding: 10px 10%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+        }
+        .nav-links { display: flex; gap: 20px; align-items: center; }
+        .nav-btn { color: #2f3542; text-decoration: none; font-size: 0.85rem; font-weight: 700; cursor: pointer; background: none; border: none; transition: 0.3s; }
+        .nav-btn:hover, .nav-btn.active { color: #ff4757; }
+        
+        .auth-buttons { display: flex; gap: 15px; align-items: center; }
+        .login-btn { color: #2f3542; font-weight: 700; cursor: pointer; background: none; border: none; }
+        .register-btn { background: #2f3542; color: white; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer; border: none; }
+
+        /* HEADER */
+        header { text-align: center; padding: 80px 10% 40px; position: relative; z-index: 1; }
